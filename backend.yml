@@ -35,7 +35,18 @@
       ansible.builtin.unarchive:
         src: /tmp/backend.zip
         dest: /app
-        remote_src: yes     
+        remote_src: yes    
+
+
+    - name: Import schema from SQL file
+      community.mysql.mysql_db:
+        name: mysql
+        state: import
+        target: /app/schema/backend.sql
+        login_user: root
+        login_password: ExpenseApp@1
+        host: mysql.daws83s.shop    
+
       
 
     
