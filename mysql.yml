@@ -15,6 +15,12 @@
         enabled: yes
         state: started 
 
+    - name: Install MySQL-python
+      ansible.builtin.pip:
+        name: MySQL-python
+        state: present
+        executable: /usr/bin/pip     
+
     - name: Get MySQL server version
       community.mysql.mysql_info:
         login_user: root
