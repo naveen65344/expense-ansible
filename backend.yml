@@ -37,13 +37,13 @@
         dest: /app
         remote_src: yes 
 
-    - name: Install PyMySQL package
+    - name: Install Python packages
       ansible.builtin.pip:
-        name: {{item}}
-        state: present  
-        loop:
-        -  PyMySQL 
-        -  cryptography   
+        name: "{{ item }}"
+        state: present
+      loop:
+        - PyMySQL
+        - cryptography
 
 
     - name: import mysql data
