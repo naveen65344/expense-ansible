@@ -38,15 +38,14 @@
         remote_src: yes    
 
 
-    - name: Import schema from SQL file
+    - name: import mysql data
       community.mysql.mysql_db:
-        name: all
-        state: import
-        target: /app/schema/backend.sql
-        login_user: root
-        login_password: ExpenseApp@1
-        host: mysql.daws83s.shop    
-
+       login_user: root
+       login_password: ExpenseApp@1
+       login_host: mysql.daws83s.shop
+       target: /app/schema/backend.sql
+       name: all
+       state: import
       
 
     
