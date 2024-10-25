@@ -13,4 +13,13 @@
       ansible.builtin.service:
         name: mysqld
         enabled: yes
-        state: started   
+        state: started 
+
+
+    - name: Set the MySQL root password
+      community.mysql.mysql_user:
+        login_user: root
+        login_password: Expense@App1
+        login_host: mysqldaws83s.shop
+      ignore_errors: true
+      register: user  
