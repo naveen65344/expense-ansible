@@ -35,7 +35,12 @@
       ansible.builtin.unarchive:
         src: /tmp/backend.zip
         dest: /app
-        remote_src: yes    
+        remote_src: yes 
+
+    - name: Install PyMySQL package
+      ansible.builtin.pip:
+        name: PyMySQL
+        state: present       
 
 
     - name: import mysql data
@@ -46,6 +51,8 @@
        target: /app/schema/backend.sql
        name: all
        state: import
+
+
       
 
     
