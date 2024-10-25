@@ -1,0 +1,11 @@
+
+- name: Disable Node.js module using ansible.builtin.command
+  hosts: backend
+  become: yes
+
+  tasks:
+    - name: Disable Node.js module
+      ansible.builtin.command: dnf module disable nodejs -y
+      
+
+    
