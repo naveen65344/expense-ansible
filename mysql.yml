@@ -1,6 +1,6 @@
 
 - name: Install MySQL server
-  hosts: mysql_servers
+  hosts: mysql
   become: yes
 
   tasks:
