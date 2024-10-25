@@ -13,14 +13,18 @@
 
     - name: Install Node.js
       ansible.builtin.package:
-        name: nodejs
+        name: "{{item}}"
         state: present
+      loop:
+      - mysql
+      - nodejs  
 
 
     - name: Ensure the user 'expense' is present
       ansible.builtin.user:
         name: expense
         state: present   
+        
 
     - name: Ensure /app directory exists
       ansible.builtin.file:
