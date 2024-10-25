@@ -19,11 +19,12 @@
       ansible.builtin.pip:
         name: MySQL-python
         state: present
-        executable: /usr/bin/pip     
+             
 
     - name: Get MySQL server version
       community.mysql.mysql_info:
         login_user: root
         login_password: ExpenseApp@1
         login_host: mysqldaws83s.shop
+      ignore_errors: true  
       register: mysql_info
