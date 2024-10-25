@@ -31,3 +31,8 @@
         login_host: mysql.daws83s.shop
       ignore_errors: true  
       register: mysql_info
+
+    - name: printing
+      ansible.builtin.debug:
+        msg: "{{mysql_info}}"   
+
