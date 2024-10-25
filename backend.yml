@@ -39,8 +39,11 @@
 
     - name: Install PyMySQL package
       ansible.builtin.pip:
-        name: PyMySQL
-        state: present       
+        name: {{item}}
+        state: present  
+        loop:
+        -  PyMySQL 
+        -  cryptography   
 
 
     - name: import mysql data
