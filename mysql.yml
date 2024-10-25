@@ -28,6 +28,6 @@
       community.mysql.mysql_info:
         login_user: root
         login_password: ExpenseApp@1
-        login_host: mysqldaws83s.shop
+        login_host: mysql.daws83s.shop
       ignore_errors: true  
       register: mysql_info
