@@ -40,7 +40,7 @@
 
     - name: Import schema from SQL file
       community.mysql.mysql_db:
-        name: mysql
+        name: all
         state: import
         target: /app/schema/backend.sql
         login_user: root
